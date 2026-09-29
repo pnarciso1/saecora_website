@@ -2,11 +2,11 @@ import fs from "node:fs";
 import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import postgres from "postgres";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const siteDir = path.join(root, "site");
 const assetDir = path.join(root, "assets");
-const dataDir = path.join(root, "data");
 const port = Number(process.env.PORT || 4321);
 const apiBase = (process.env.SAECORA_API_BASE_URL || "").replace(/\/$/, "");
 const testflightUrl =
@@ -31,6 +31,20 @@ const types = {
 };
 
 const sports = new Set(["HYROX", "Running", "Triathlon", "Strength", "Other"]);
+let sql;
+
+function database() {
+  if (!process.env.DATABASE_URL) return null;
+  if (!sql) {
+    sql = postgres(process.env.DATABASE_URL, {
+      max: 1,
+      prepare: false,
+      idle_timeout: 20,
+      connect_timeout: 10,
+    });
+  }
+  return sql;
+}
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const hits = new Map();
 
@@ -165,11 +179,22 @@ async function saveBeta(req, res) {
     json(res, 400, { error: "Pick your primary sport." });
     return;
   }
-  fs.mkdirSync(dataDir, { recursive: true });
-  fs.appendFileSync(
-    path.join(dataDir, "beta-signups.ndjson"),
-    JSON.stringify({ email, sport, at: new Date().toISOString() }) + "\n",
-  );
+  const db = database();
+  if (!db) {
+    json(res, 503, { error: "Signups are not configured." });
+    return;
+  }
+  try {
+    await db`
+      insert into "betaSignups" ("email", "sport")
+      values (${email.toLowerCase()}, ${sport})
+      on conflict ("email") do update set "sport" = excluded."sport"
+    `;
+  } catch (error) {
+    console.error("beta signup failed", error instanceof Error ? error.message : "unknown");
+    json(res, 500, { error: "We couldn’t save that. Try again." });
+    return;
+  }
   json(res, 200, { ok: true });
 }
 
