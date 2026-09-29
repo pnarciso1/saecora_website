@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coach report · Saecora</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="/img/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to report</a>
+  <header class="header">
+    <a class="brand" href="/">
+      <img src="/img/icon-64.png" width="32" height="32" alt="">
+      <span class="wordmark">SAECORA</span>
+    </a>
+    <a class="pill-nav" href="/#join">JOIN THE BETA</a>
+  </header>
+  <main id="content" class="legal">
+    <div id="state" class="stack gap-16">
+      <div class="kicker">COACH DESK</div>
+      <h1 id="state-title">Opening the report.</h1>
+      <p id="state-copy" class="quiet" hidden></p>
+      <button type="button" id="retry" class="reset retry" hidden>Try again</button>
+    </div>
+
+    <div id="report" hidden>
+      <div class="stack gap-16">
+        <div class="kicker">READ-ONLY</div>
+        <h1 id="athlete"></h1>
+        <p id="shared" class="quiet"></p>
+      </div>
+
+      <section id="readiness" class="viz">
+        <div class="label">READINESS</div>
+        <div class="score-row">
+          <div id="score" class="serif coach-score"></div>
+          <div id="band" class="stat-value"></div>
+        </div>
+        <p id="summary" class="quiet"></p>
+      </section>
+
+      <section id="events" class="viz" hidden>
+        <div class="label">EVENTS</div>
+        <div id="event-list" class="stack gap-14"></div>
+      </section>
+
+      <section id="plan" class="viz" hidden>
+        <div class="label">PLAN</div>
+        <div id="plan-title" class="serif" style="font-size:32px;line-height:1.1"></div>
+        <p id="plan-copy" class="quiet"></p>
+        <div id="sessions"></div>
+        <div id="calibration" class="block-note"></div>
+      </section>
+
+      <section id="workouts" class="viz" hidden>
+        <div class="label">RECENT SESSIONS</div>
+        <div id="workout-list" class="stack gap-14"></div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/img/icon-48.png" width="24" height="24" alt="">
+        <span>© 2026 Paolo Narciso, LLC</span>
+      </div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="mailto:pnarciso@icloud.com">Contact</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="/coach.js"></script>
+</body>
+</html>

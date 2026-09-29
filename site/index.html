@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saecora: Masters Training. Join the TestFlight beta</title>
+  <meta name="description" content="Competitive training for masters athletes. Saecora sets your training load from your readiness, plans around your A-race, and gives you the extra protein your age calls for.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="/img/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <meta property="og:title" content="Saecora: Masters Training">
+  <meta property="og:description" content="Competitive training for masters athletes. Join the TestFlight beta.">
+  <meta property="og:image" content="https://saecora.com/img/og.jpg">
+  <meta property="og:url" content="https://saecora.com/">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#join">Skip to beta signup</a>
+  <header class="header">
+    <a class="brand" href="/">
+      <img src="/img/icon-64.png" width="32" height="32" alt="">
+      <span class="wordmark">SAECORA</span>
+    </a>
+    <a class="pill-nav" href="#join">JOIN THE BETA</a>
+  </header>
+
+  <section class="hero">
+    <div id="join" class="stack gap-28">
+      <div class="kicker-row"><span class="kicker-dash"></span>TESTFLIGHT BETA · iPHONE</div>
+      <h1>Still in the fight.</h1>
+      <p class="lede">Competitive training for masters athletes. Saecora sets your training load from your readiness, plans around your A‑race, and gives you the extra protein your age calls for.</p>
+
+      <form id="signup" class="panel" novalidate>
+        <label class="field">
+          <span class="label">EMAIL FOR YOUR INVITE</span>
+          <input id="email" type="email" name="email" placeholder="you@icloud.com" autocomplete="email" inputmode="email">
+        </label>
+        <div class="stack gap-10">
+          <span class="label" id="sport-label">PRIMARY SPORT</span>
+          <div class="chips" role="group" aria-labelledby="sport-label">
+            <button type="button" class="chip" data-sport="HYROX" aria-pressed="false">HYROX</button>
+            <button type="button" class="chip" data-sport="Running" aria-pressed="false">Running</button>
+            <button type="button" class="chip" data-sport="Triathlon" aria-pressed="false">Triathlon</button>
+            <button type="button" class="chip" data-sport="Strength" aria-pressed="false">Strength</button>
+            <button type="button" class="chip" data-sport="Other" aria-pressed="false">Other</button>
+          </div>
+        </div>
+        <div id="error" class="form-error" role="alert" hidden></div>
+        <button type="submit" class="pill">REQUEST ACCESS</button>
+        <div class="fine">No spam. We use your email only for beta access and updates. <a href="/privacy">Privacy</a></div>
+      </form>
+
+      <div id="confirm" class="panel confirm" hidden>
+        <div class="stack gap-6">
+          <span class="kicker tight">YOU'RE IN · <span id="sport-out"></span></span>
+          <div class="serif confirm-title">Install Saecora on your iPhone.</div>
+          <div class="registered">Registered: <span id="email-out"></span></div>
+        </div>
+        <ol class="steps">
+          <li><span class="num">1</span><span>Install <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener">TestFlight</a> from the App Store.</span></li>
+          <li><span class="num">2</span><span>On your iPhone, open the invite link below.</span></li>
+          <li><span class="num">3</span><span>Tap <b class="em">Accept</b>, then <b class="em">Install</b>. Saecora will appear on your Home Screen.</span></li>
+        </ol>
+        <a id="invite" class="pill spread" href="https://testflight.apple.com/join/XXXXXXXX" target="_blank" rel="noopener">OPEN TESTFLIGHT INVITE <span class="arrow">→</span></a>
+        <button type="button" id="reset" class="reset">Use a different email</button>
+      </div>
+    </div>
+
+    <div class="today-wrap">
+      <div class="today">
+        <div class="today-head">
+          <div class="serif today-title">Today</div>
+          <div class="label">TRAIN / RECOVER</div>
+        </div>
+        <div class="ring-row">
+          <div class="ring" aria-hidden="true"><div class="ring-hole serif">82</div></div>
+          <div class="stack gap-6">
+            <div class="label">READINESS</div>
+            <div class="ring-copy">You can train hard today.</div>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stack gap-4"><div class="label">BAND</div><div class="stat-note">Train as planned.</div></div>
+          <div class="stat-value">READY</div>
+        </div>
+        <div class="stat">
+          <div class="stack gap-4"><div class="label">EASY HR</div><div class="stat-note">bpm, age-adjusted</div></div>
+          <div class="stat-value">118–136</div>
+        </div>
+        <div class="stat">
+          <div class="stack gap-4"><div class="label">PROTEIN</div><div class="stat-note">Daily target</div></div>
+          <div class="stat-value">140 g</div>
+        </div>
+        <div class="stat">
+          <div class="stack gap-4"><div class="label">NEXT SESSION</div><div class="stat-note">Stations + run</div></div>
+          <div class="stat-value">HYROX</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-intro">
+      <div class="stack gap-20">
+        <div class="kicker">WHO IT'S FOR</div>
+        <h2>Athletes over 40 who still race.</h2>
+        <p class="intro">Most apps are built for 25-year-olds. After 40 your body recovers differently, needs more protein, and handles hard days best when they're spaced further apart. Saecora plans for that.</p>
+      </div>
+    </div>
+    <div class="features">
+      <article class="feature">
+        <div class="stack gap-10">
+          <div class="kicker feature">READINESS</div>
+          <h3>Calibrated by research.</h3>
+          <p>A daily score from your Apple Watch data sets the day’s load. Hard days are spaced further apart for athletes over 40.</p>
+        </div>
+        <div class="viz">
+          <div class="score-row"><div class="serif score">82</div><div class="score-note">/100 · Training capacity is high</div></div>
+          <div class="bands">
+            <div class="stack gap-8"><div class="bar"></div><div class="band-name">RECOVER</div><div class="band-range">0–49</div></div>
+            <div class="stack gap-8"><div class="bar"></div><div class="band-name">STEADY</div><div class="band-range">50–74</div></div>
+            <div class="stack gap-8 meter on"><div class="bar on"></div><div class="band-name">READY</div><div class="band-range">75–100</div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="stack gap-10">
+          <div class="kicker feature">LOGGING</div>
+          <h3>Log the day as it happened.</h3>
+          <p>Warm-up run, lift, second run. Log mixed sessions as one workout, then tell the AI how it went.</p>
+        </div>
+        <div class="viz">
+          <div class="label">MIXED SESSION · BRICK</div>
+          <div class="brick">
+            <div class="seg" style="flex:25"><div class="seg-bar gold">1 · Run</div><div class="seg-note">25 min · 3.2 km</div></div>
+            <div class="seg" style="flex:40"><div class="seg-bar neutral">2 · Strength</div><div class="seg-note">40 min</div></div>
+            <div class="seg" style="flex:28"><div class="seg-bar gold">3 · Run</div><div class="seg-note">28 min</div></div>
+          </div>
+          <div class="felt"><div class="felt-label">How it felt</div><div class="felt-value">7/10</div></div>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="stack gap-10">
+          <div class="kicker feature">PLANNING</div>
+          <h3>One peak. Two races.</h3>
+          <p>Mark one race as your A-race to peak for. Other races are B-races that fit into the plan without costing you the peak.</p>
+        </div>
+        <div class="viz">
+          <div class="load-head"><div class="label">WEEKLY LOAD</div><div class="label">SEP → DEC</div></div>
+          <div class="load" aria-hidden="true">
+            <i style="height:40%"></i><i style="height:46%"></i><i style="height:52%"></i><i style="height:44%"></i>
+            <i style="height:56%"></i><i style="height:62%"></i><i style="height:50%"></i><i class="race" style="height:30%"></i>
+            <i style="height:58%"></i><i style="height:66%"></i><i style="height:74%"></i><i style="height:80%"></i>
+            <i style="height:64%"></i><i style="height:42%"></i><i class="race" style="height:24%"></i>
+          </div>
+          <div class="races">
+            <div class="stack gap-4"><span class="tag tag-b">B-RACE</span><div class="race-name">Chicago Half</div><div class="race-note">November · short taper</div></div>
+            <div class="stack gap-4"><span class="tag tag-a">A-RACE</span><div class="race-name">HYROX DC</div><div class="race-note">December · the peak</div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="stack gap-10">
+          <div class="kicker feature">FUEL</div>
+          <h3>Fuel, don’t shrink.</h3>
+          <p>Higher protein targets, because muscles respond less to protein as you age. Includes an AI meal plan built for masters athletes.</p>
+        </div>
+        <div class="viz">
+          <div class="macros">
+            <div class="macro stack gap-4"><div class="label">CALORIES</div><div class="macro-value">2400</div></div>
+            <div class="macro stack gap-4"><div class="label">PROTEIN</div><div class="macro-value">140 g</div></div>
+          </div>
+          <div class="meals">
+            <div class="meal"><div class="meal-bar">35 g</div><div class="meal-name">Breakfast</div></div>
+            <div class="meal"><div class="meal-bar">35 g</div><div class="meal-name">Lunch</div></div>
+            <div class="meal"><div class="meal-bar">35 g</div><div class="meal-name">Post-session</div></div>
+            <div class="meal"><div class="meal-bar">35 g</div><div class="meal-name">Dinner</div></div>
+          </div>
+          <div class="meal-note">~35 g per meal, spread across the day</div>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="stack gap-10">
+          <div class="kicker feature">COACH</div>
+          <h3>Your coach sees the context.</h3>
+          <p>Share a read-only link with your coach showing readiness, upcoming sessions and the next block. Revoke it anytime.</p>
+        </div>
+        <div class="viz">
+          <div class="link-field"><span>saecora.com/coach/p-52…</span><div class="label">READ-ONLY</div></div>
+          <div class="readiness-inline"><div class="serif">78</div><div class="readiness-note">Readiness · keep the load steady</div></div>
+          <div>
+            <div class="session"><span class="when">Tue</span><span>Tempo Run <span class="dim">· 60 min</span></span></div>
+            <div class="session"><span class="when">Thu</span><span>Strength <span class="dim">· 50 min</span></span></div>
+            <div class="session"><span class="when">Sat</span><span>Long Run <span class="dim">· 90 min</span></span></div>
+          </div>
+          <div class="block-note">Next block: Build Endurance · 3 weeks</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="beta">
+    <div class="beta-inner">
+      <div class="beta-head">
+        <div class="kicker">HOW THE BETA WORKS</div>
+        <h2>Three steps to your first session.</h2>
+      </div>
+      <div class="beta-steps">
+        <div class="step-card">
+          <div class="serif step-num">01</div>
+          <div class="step-title">Request access</div>
+          <div class="step-copy">Leave the email you use on your iPhone and your primary sport.</div>
+        </div>
+        <div class="step-card">
+          <div class="serif step-num">02</div>
+          <div class="step-title">Install with TestFlight</div>
+          <div class="step-copy">Get Apple’s free TestFlight app, open the invite, and install Saecora.</div>
+        </div>
+        <div class="step-card">
+          <div class="serif step-num">03</div>
+          <div class="step-title">Train and tell us</div>
+          <div class="step-copy">Use it for real sessions. Send feedback or screenshots straight from TestFlight.</div>
+        </div>
+      </div>
+      <a class="pill" href="#join">REQUEST ACCESS <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/img/icon-48.png" width="24" height="24" alt="">
+        <span>© 2026 Paolo Narciso, LLC</span>
+      </div>
+      <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="mailto:pnarciso@icloud.com">Contact</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="/site-config.js"></script>
+  <script src="/home.js"></script>
+</body>
+</html>
